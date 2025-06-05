@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import './index.css';
+
+const START_DEBT = 68000000000; // 68 Milliarden €
+const BERLIN_POPULATION = 3685973;
+const INCREASE_PER_SECOND = 12; // Schuldenzuwachs pro Sekunde
 
 function App() {
+  const [debt, setDebt] = useState(START_DEBT);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDebt(prev => prev + INCREASE_PER_SECOND);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const perCapitaDebt = debt / BERLIN_POPULATION;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="banner">
+        official website of bullshit states government 🇮🇴
+      </div>
+      <main className="container">
+        <h1>💸 Berliner Schuldenuhr</h1>
+        <p className="debt">Gesamtschulden: € {debt.toLocaleString('de-DE')}</p>
+        <p className="debt">Pro Kopf: € {perCapitaDebt.toFixed(2).toLocaleString('de-DE')}</p>
+      </main>
+    </>
   );
 }
 
