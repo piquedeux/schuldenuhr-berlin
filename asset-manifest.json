@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/schuldenberlin/static/css/main.9e49e33f.css",
+    "main.js": "/schuldenberlin/static/js/main.b578e96e.js",
+    "static/js/453.09dfdc91.chunk.js": "/schuldenberlin/static/js/453.09dfdc91.chunk.js",
+    "index.html": "/schuldenberlin/index.html",
+    "main.9e49e33f.css.map": "/schuldenberlin/static/css/main.9e49e33f.css.map",
+    "main.b578e96e.js.map": "/schuldenberlin/static/js/main.b578e96e.js.map",
+    "453.09dfdc91.chunk.js.map": "/schuldenberlin/static/js/453.09dfdc91.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9e49e33f.css",
+    "static/js/main.b578e96e.js"
+  ]
+}
